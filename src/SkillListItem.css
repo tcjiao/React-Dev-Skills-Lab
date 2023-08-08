@@ -1,0 +1,7 @@
+.SkillListItem {
+    margin: 4vmin;
+    padding: 2vmin 4vmin 2vmin 4vmin;
+    border: 1vmin solid black;
+    list-style: none;
+    font-size: 6vmin;
+}
