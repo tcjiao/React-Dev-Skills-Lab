@@ -13,7 +13,7 @@ export default function App() {
   const [showSkills, setShowSkills] = useState(true);
 
   function handleAddSkill() {
-    const newSkills = [...skills, 'xxxx';]
+    const newSkills = [...skills, 'xxxx'];
     setSkills(newSkills);
   }
 
