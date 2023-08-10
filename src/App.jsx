@@ -1,6 +1,8 @@
 import './App.css'
+import NewSkillForm from './NewSkillForm';
 import SkillList from './SkillList'
 import SkillListItem from './SkillListItem';
+
 import { useState } from 'react';
 
 export default function App() {
@@ -10,18 +12,21 @@ export default function App() {
     { name: "Javascript", level: 4}, 
     { name: "Python", level: 2}
   ]);
+  
+  function addSkill(skill) {
+    setSkills([...skills, skill]);
+  }
+
   const [showSkills, setShowSkills] = useState(true);
 
-  function handleAddSkill() {
-    const newSkills = [...skills, 'xxxx'];
-    setSkills(newSkills);
-  }
 
   return (
     <div className='App'>
       <h1>React Dev Skills</h1>
+      <button className="ShowSkills" onClick={() => setShowSkills(!showSkills)}> {showSkills ? "HIDE" : "SHOW"}</button>
       {showSkills && <SkillList skills={skills} />}
-      <button onClick={handleAddSkill}>Add Skills</button>
+      <hr />
+      <NewSkillForm addSkill={addSkill} />
     </div>
   )
 }
